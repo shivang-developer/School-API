@@ -5,15 +5,13 @@ const classroomSchema = new mongoose.Schema({
     type: String,
   },
   capacity: {
+    //how many can sit inside it
     type: Number,
     required: true,
   },
   room_type: {
     type: String,
     required: true,
-  },
-  room_type: {
-    type: String,
     enum: {
       values: ["Science Class", "Biology Lab", "Computer Lab", "Sports Class"],
       message: `{VALUE} is not supported`,

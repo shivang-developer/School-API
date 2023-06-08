@@ -1,33 +1,35 @@
 const mongoose = require("mongoose");
 
 const classSchema = new mongoose.Schema({
-  first_name: {
-    type: String,
+  subject: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Subject",
     required: true,
   },
-  last_name: {
-    type: String,
+  teacher: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Teacher",
     required: true,
   },
-  year_group: {
-    type: Number,
-    required: [true, "year must be provided"],
-  },
-  date_of_birth: {
-    type: Date,
-    default: Date.now(),
+  classroom: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Classroom",
     required: true,
   },
-  school_team: {
-    type: String,
-    enum: {
-      values: ["Ruby", "Saphire", "Emerald", "Amber"],
-      message: `{VALUE} is not supported`,
+  students: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Student",
+      required: true,
     },
+  ],
+  period: {
+    type: String,
+    required: true,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now(),
+  time: {
+    type: String,
+    required: true,
   },
 });
 

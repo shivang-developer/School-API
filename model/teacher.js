@@ -14,11 +14,14 @@ const teacherSchema = new Schema({
   },
   title: {
     type: String,
-    required: [true, "year must be provided"],
   },
-  Level: {
+  level: {
     type: Number,
     required: true,
+    enum: {
+      values: [1, 2, 3, 4, 5],
+      message: `{VALUE} is not supported`,
+    },
   },
   subjects_taught: {
     type: String,

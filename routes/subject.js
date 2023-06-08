@@ -4,6 +4,6 @@ const router = express.Router();
 const { getAllSubjects, addNewSubject } = require("../controllers/subject");
 
 router.route("/").get(getAllSubjects);
-router.route("/").post(addNewSubject);
+router.route("/add").post(addNewSubject);
 
 module.exports = router;

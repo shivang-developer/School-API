@@ -4,6 +4,6 @@ const router = express.Router();
 const { getAllTeachers, addNewTeacher } = require("../controllers/teacher");
 
 router.route("/").get(getAllTeachers);
-router.route("/").post(addNewTeacher);
+router.route("/add").post(addNewTeacher);
 
 module.exports = router;

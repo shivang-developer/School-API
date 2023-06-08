@@ -8,10 +8,10 @@ const subjectSchema = new mongoose.Schema({
       values: ["English", "Math", "Computer", "Science"],
       message: `{VALUE} is not supported`,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now(),
-    },
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
   },
 });
 
